@@ -21,6 +21,7 @@ enough to trust before any deeper analysis.
 
 ## Database Structure
 | Table | Description |
+|---|---|
 | `data_dictionary` | Describes each column in every table |
 | `employee` | Surveyors and staff who collected the data |
 | `global_water_access` | Country-level water access statistics |
@@ -58,9 +59,11 @@ enough to trust before any deeper analysis.
 - Applied the verified updates to `well_pollution`, then dropped the copy table
 
 ## Key Findings
-1. [Finding 1]
-2. [Finding 2]
-3. [Finding 3]
+1. Finding 1: Types found [river, well, shared_tap, tap_in_home, tap_in_home_broken] 
+2. Finding 2: Only shared taps had queues over 500 minutes. Shared taps averaged 136.9 minutes (max 539),
+  rivers 17.0 (max 29), and wells and home taps recorded no queue time
+3. Finding 3: Quality scores: 1,526 records have a perfect score of 10 on a repeat visit (visit_count 2 to 8),
+  exactly 218 at each visit number. This flat pattern is unexpected and flagged for review
 
 ## How to Run
 1. Install MySQL 8.0 and load the `md_water_services` database
